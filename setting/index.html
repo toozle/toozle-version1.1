@@ -1,0 +1,70 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8"/>
+  <title>Toozleの設定</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i" rel="stylesheet">
+</head>
+<body>
+  <font size ="3">
+  <div class ="setting_body">設定
+  </div>
+  </font>
+  <h3 class ="title_1">テーマ</h3>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script>
+    function getCookieArray(){
+      var arr = new Array();
+      if(document.cookie != ''){
+          var tmp = document.cookie.split('; ');
+          for(var i=0;i<tmp.length;i++){
+              var data = tmp[i].split('=');
+              arr[data[0]] = decodeURIComponent(data[1]);
+          }
+      }
+      return arr;
+  }
+  var arr = getCookieArray();
+if(arr['themer']=="dark"){
+  $("body").css({
+    "background-color" : "#000000",
+    "color": "#87B0F3",
+});
+}
+</script>
+<div class ="setting_1">
+  <input type="radio" name="themer" value="dark">ダークテーマに設定
+  <input type="radio" name="themer" value="white">ホワイトテーマに設定
+</div>
+<br><br><button id ="save"><b>設定の保存</b></button><button id ="notsave"><b><font color ="black">キャンセル</font></b></button>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script>
+    $("#save").click(function() {
+    var themer = $('input[name="themer"]:checked').val();
+    if(themer =="dark"){
+      location.href ="https://www.toozle.net/";
+      document.cookie = "themer=dark; path=/";
+     }
+     if(themer =="white"){
+      document.cookie = "themer=white; path=/";
+      location.href ="https://www.toozle.net/"
+     }
+  })
+  let cookies_get = document.cookie;
+</script>
+<script>
+  $("#notsave").click(function() {
+    location.href ="https://www.toozle.net/";
+  })
+</script>
+</html>
+
+  

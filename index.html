@@ -1,0 +1,113 @@
+    <html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167886143-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167886143-1');
+</script>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/x-icon" href="image/icon/toozleicon.ico">
+<link rel="apple-touch-icon" sizes="275x275" href="image/icon/toozleicon.png">　
+<link href="https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i" rel="stylesheet">
+        <meta http-equiv="content-type" charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Toozle">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#8f6552">
+        <link rel="apple-touch-icon" href="image/icon/icon-192x192.png">
+        <title>Toozle</title>
+        <script>
+if('serviceWorker' in navigator){
+	navigator.serviceWorker.register('serviceworker.js').then(function(){
+    console.log("Toozleのインストールが完了したんや。");
+		console.log("Toozleをお選びいただき誠にありがたいぜ。");
+	});
+}
+</script>
+    </head>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script>
+    
+    function getCookieArray(){
+      var arr = new Array();
+      if(document.cookie != ''){
+          var tmp = document.cookie.split('; ');
+          for(var i=0;i<tmp.length;i++){
+              var data = tmp[i].split('=');
+              arr[data[0]] = decodeURIComponent(data[1]);
+          }
+      }
+      return arr;
+  }
+  var arr = getCookieArray();
+</script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+  if(arr["themer"]=="dark"){
+    document.write('<link rel="stylesheet" type="text/css" href="dark.css">');
+  }
+  if(arr['themer']=="white"){
+    document.write('<link rel="stylesheet" type="text/css" href="style.css">');
+  }
+  </script>
+    <body>
+        <ul>
+            <div class ="m_pc_all">
+            <div class ="menupc"><a href ="https://about.toozle.net"><li>Toozleについて</li></a></div>
+            <div class ="menupc"><a href ="https://twitter.com/toozle_official"><li>Twitter</li></a></div>
+            </div>
+        </ul>
+        <a href ="setting"><img src ="image/setting.png" width ="25" class ="setting"></a>
+        <center>
+        <a href ="/"><img src ="image/toozle.png" width ="350" class ="logo"></a>
+        <form method ="GET" action ="search" name ="search" id ="form_se">
+          <div class ="search_form">
+            <input type ="text" size ="60px" name="q" id ="search" placeholder ="Toozleで検索"><label for ="onsei_search"><img src ="image/dokata.png" width ="55px" class ="onsei_search"></label>
+          </div>
+            <br>
+            <input type ="submit" value ="Toozle検索" class ="t_se">
+            <div class ="engine">
+                <select name ="engine">
+                    <option value="google">検索エンジンを選択</option>
+                    <option value="pornhub">PornHub 検索</option>
+                    <option value="xvideos">XVideos 検索</option>
+                    <option value="nicovideo">ニコニコ動画 検索</option>
+                    <option value="google">Google 検索</option>
+                    <option value="twitter">Twitter 検索</option>
+                    <option value="youtube">Youtube 検索</option>
+                    <option value="fc2">FC2 検索</option>
+                </select>
+            </div>
+        </form>
+        <input type ="checkbox" id="onsei_search">
+        <script>
+            let button = document.getElementById('onsei_search');
+        let speech = new webkitSpeechRecognition();
+        let result = document.getElementById('result');
+        button.onclick = () => {
+          speech.start();
+          speech.onresult = function (e) {
+            speech.stop();      
+            if (e.results[0].isFinal) {
+              document.getElementById("search").value =　e.results[0][0].transcript;
+            }
+          } 
+        }
+            </script> 
+        </center>
+        <div class ="bottom">
+            <ul>
+                <div class ="bottom_item"><a href ="http://about.toozle.net/corporate"><li>企業情報</li></a></div>
+                <div class ="bottom_item"><a href ="http://developper.toozle.net"><li>開発者向けサイト</li></a></div>
+                <div class ="bottom_item"><a href ="http://support.toozle.net"><li>ヘルプ</li></a></div>
+                <br><div class ="bottom_item"><li>&copy;2020Toozle</li></div>
+            </ul>
+        </div>
+    </body>
+</html>    

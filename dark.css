@@ -1,0 +1,24 @@
+body{
+  background-color: black;
+  color: #87B0F3;
+}
+
+a{
+  color: #87B0F3;
+}
+
+.bottom{
+  background-color: gray; 
+}
+
+input{
+  background-color: lightgray;
+}
+
+input.t_se{
+  background-color:gray;
+}
+
+select{
+  background-color: gray;
+}

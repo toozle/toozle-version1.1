@@ -1,0 +1,98 @@
+body{
+    margin: 20px;
+    font-family: 'Google Sans';
+}
+
+input#search{
+    padding: 12px;
+    border-radius: 20px;
+    margin: 10px;
+    font-size: 15px;
+    border: solid 1px #dcdcdc;   
+    position: relative;
+}
+
+#form_se{
+    float: right;
+}
+
+img#logo{
+    margin: 10px;
+    vertical-align: middle;
+}
+
+#onsei_search{
+    display: none;
+}
+
+.onsei_search{
+    vertical-align: middle;
+}
+
+.engine{
+    float: right;
+}
+
+.control{
+    display: inline-block;
+}
+
+input.t_se{
+    border-radius: 5px;
+    margin: 5px;
+    padding: 11px;
+    font-size: 13px;
+    border: solid 0px;
+    background-color: #f0f0f0;
+    color: #333333;
+    float: right;
+}
+
+select{
+    border-radius: 5px;
+    margin: 5px;
+    padding: 11px;
+    font-size: 13px;
+    border: solid 0px;
+    background-color: #f0f0f0;
+    color: #333333;
+    float: right;
+}
+
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page, .gsc-results .gsc-cursor-box .gsc-cursor-page {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    padding: 5px 8px; 
+  }
+   
+  .gsc-results .gsc-cursor-box .gsc-cursor-page {
+    color: #0c0404 !important;
+  }
+   
+  .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    color: #4F863B !important;
+  }
+   
+  .gsc-results .gsc-cursor-box .gsc-cursor-current-page:hover {
+    text-decoration: none !important;
+  }    
+
+
+  @media only screen and (max-width:1000px){
+      body{
+          margin: 0;
+      }
+
+      .logo{
+          text-align: center;
+      }
+
+      input#search{
+          width: 68%;
+      }
+
+      .onesi_search{
+          margin: 0;
+          float: right;
+      }
+  }
